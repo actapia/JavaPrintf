@@ -54,6 +54,9 @@ public class SmartFormatter {
 	}
 	
 	public String format(String ... values) {
+		if (values.length == 0) {
+			return formatString;
+		}
 		Object[] newValues = new Object[values.length];
 		for (int i = 0; i < values.length; i++) {
 			newValues[i] = formatterFunctions.get(i).apply(values[i]);
